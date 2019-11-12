@@ -115,12 +115,21 @@
                     type: "post",
                     url: "http://localhost:3000/list/",
                     data: {username: $("#username").val(), pwd: $("#pwd").val()},
-                    success:function(data){
-                       window.location = "http://localhost:3000/list/add/";
-                    },
-                    err:function(){
-                        console.log(err);
+
+                    success:function(str){
+                        if(str=='success'){
+                            window.location = "http://localhost:3000/list/add/";
+
+                        }else{
+                            alert("message error");
+                        }
+
+                        
                     }
+
+                   
+                        
+                    
         })
     })
         
